@@ -22,7 +22,7 @@ class RussianValidator:
 class AddPostForm(forms.ModelForm):
     cat = forms.ModelChoiceField(queryset=Category.objects.all(), label='Категории', empty_label='Категория не выброна')
     husband = forms.ModelChoiceField(queryset=Husband.objects.all(), required=False, label='Муж',
-                                      empty_label='Не замужем')
+                                     empty_label='Не замужем')
 
     class Meta:
         model = Women
@@ -40,4 +40,5 @@ class AddPostForm(forms.ModelForm):
         return title
 
 
-
+class UploadFileForm(forms.Form):
+    file = forms.ImageField(label='Файл')
